@@ -3,6 +3,7 @@
   "framework": null,
   "installCommand": "npm install --include=dev",
   "buildCommand": "npm run build",
+  "outputDirectory": "public",
   "functions": {
     "api/index.ts": {
       "memory": 1024,

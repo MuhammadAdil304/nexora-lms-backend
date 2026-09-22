@@ -1,0 +1,1 @@
+Nexora LMS API. See /health for status.
