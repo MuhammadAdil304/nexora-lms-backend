@@ -1,0 +1,5 @@
+-- No-op: the historical "fix duplicate enrollment_progress" migration.
+-- It used to DROP and re-create enrollment_progress (destroying existing
+-- lesson progress data). The duplicate it repaired is now prevented at the
+-- source: 005 is the only migration that creates enrollment_progress and
+-- 007 is a no-op, so this file no longer needs to touch the schema.

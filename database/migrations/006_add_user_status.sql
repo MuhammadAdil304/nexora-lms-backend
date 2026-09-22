@@ -1,0 +1,5 @@
+-- No-op: superseded by migration 001.
+-- The `users.status` column is already part of the base `users` table
+-- definition in 001_create_users_table.sql. Keeping this file as a no-op
+-- preserves the migration history while making a clean-database replay
+-- possible (previously it failed with ER_DUP_FIELDNAME).

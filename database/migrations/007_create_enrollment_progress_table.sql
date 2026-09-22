@@ -1,0 +1,5 @@
+-- No-op: duplicate of migration 005.
+-- enrollment_progress is already created (with the correct structure and
+-- unique key on (enrollment_id, lesson_id)) by
+-- 005_create_lesson_progress_table.sql. Keeping this file as a no-op
+-- removes the historical duplication.

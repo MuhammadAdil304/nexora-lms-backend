@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS categories (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  description VARCHAR(255) NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_categories_name (name)
+);
+
+ALTER TABLE courses ADD COLUMN category_id BIGINT UNSIGNED NULL AFTER instructor_id;
+ALTER TABLE courses ADD KEY idx_courses_category_id (category_id);
+ALTER TABLE courses ADD CONSTRAINT fk_courses_category
+  FOREIGN KEY (category_id) REFERENCES categories (id)
+  ON DELETE SET NULL ON UPDATE CASCADE;
